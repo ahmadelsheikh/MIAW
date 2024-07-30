@@ -70,13 +70,13 @@
 
 			{
 
-				baseLiveAgentContentURL: 'https://c.la1-core1.sfdc-yzvdd4.salesforceliveagent.com/content',
+				baseLiveAgentContentURL: 'https://c.la3-c1-fra.salesforceliveagent.com/content',
 
 				deploymentId: '5726N000000XZEP',
 
 				buttonId: '5736N000000fxWT',
 
-				baseLiveAgentURL: 'https://d.la1-core1.sfdc-yzvdd4.salesforceliveagent.com/chat',
+				baseLiveAgentURL: 'https://d.la3-c1-fra.salesforceliveagent.com/chat',
 
 				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I6N000000XZEZUA4_17f6e4e1efe',
 
