@@ -1,114 +1,24 @@
 <html>
   <body>
-    <style type='text/css'>
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
-	.embeddedServiceHelpButton .helpButton .uiButton {
-
-		background-color: #005290;
-
-		font-family: "Arial", sans-serif;
-
-	}
-
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-
-		outline: 1px solid #005290;
-
-	}
-
-</style>
- 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-
-<script type='text/javascript'>
-
-	var initESW = function(gslbBaseURL) {
-
-		embedded_svc.settings.displayHelpButton = true; //Or false
-
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
- 
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
- 
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
- 
-		// Settings for Chat
-
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-
-			// Returns a valid button ID.
-
-		//};
-
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
- 
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-
-		embedded_svc.settings.entryFeature = 'LiveAgent';
- 
-		embedded_svc.init(
-
-			'https://psa-bank.my.salesforce.com',
-
-			'https://myfinance.stellantis-financial-services.de/deutschland',
-
-			gslbBaseURL,
-
-			'00D1t000000qRRH',
-
-			'Support',
-
-			{
-
-				baseLiveAgentContentURL: 'https://c.la3-c1-fra.salesforceliveagent.com/content',
-
-				deploymentId: '5726N000000XZEP',
-
-				buttonId: '5736N000000fxWT',
-
-				baseLiveAgentURL: 'https://d.la3-c1-fra.salesforceliveagent.com/chat',
-
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I6N000000XZEZUA4_17f6e4e1efe',
-
-				isOfflineSupportEnabled: false
-
-			}
-
-		);
-
+			embeddedservice_bootstrap.init(
+				'00D7a00000052td',
+				'DE_MIAW',
+				'https://psa-bank--uat.sandbox.my.site.com/ESWDEMIAW1707985554271',
+				{
+					scrt2URL: 'https://psa-bank--uat.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
 	};
- 
-	if (!window.embedded_svc) {
-
-		var s = document.createElement('script');
-
-		s.setAttribute('src', 'https://psa-bank.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-
-		s.onload = function() {
-
-			initESW(null);
-
-		};
-
-		document.body.appendChild(s);
-
-	} else {
-
-		initESW('https://service.force.com');
-
-	}
-
 </script>
- 
+<script type='text/javascript' src='https://psa-bank--uat.sandbox.my.site.com/ESWDEMIAW1707985554271/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
   </body>
 </html>
